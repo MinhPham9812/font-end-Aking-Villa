@@ -1,0 +1,225 @@
+*{
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước của phần tử */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Header */
+.header {
+    height: 127px; /* Đặt chiều cao cho header */
+    background-color: var(--primary); /* Màu nền của header (được lấy từ biến CSS) */
+    display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử bên trong header */
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc (center) */
+}
+
+/* Logo */
+#nav-logo {
+    display: flex; /* Sử dụng Flexbox để logo và văn bản bên cạnh xếp hàng ngang */
+    align-items: center; /* Căn giữa logo và văn bản theo chiều dọc */
+    gap: 5px; /* Khoảng cách giữa logo và văn bản (AKING và VILLAGE) */
+    margin-right: 54px;
+}
+
+#nav-logo img {
+    height: 70px; /* Điều chỉnh chiều cao của logo */
+}
+
+/* Văn bản AKING và VILLAGE */
+.logo-text {
+    display: flex;
+    flex-direction: column; /* Xếp chữ AKING và VILLAGE theo cột (AKING ở trên, VILLAGE ở dưới) */
+    align-items: flex-start; /* Căn chữ về bên trái */
+}
+
+.logo-text-aking, .logo-text-village {
+    font-size: 14px; /* Điều chỉnh kích thước chữ */
+    color: #ffffff; /* Màu chữ trắng */
+}
+
+.logo-text-aking {
+    font-weight: normal; 
+}
+
+.logo-text-village {
+    font-weight: normal; 
+}
+
+#nav-menu {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các mục trong menu */
+    gap: 50px; /* Khoảng cách giữa các mục menu */
+    list-style: none; /* Xóa dấu bullet (chấm đầu dòng) của các mục danh sách */
+    margin: 0; /* Xóa margin thừa để tránh khoảng cách không cần thiết */
+    padding: 0; /* Xóa padding thừa để tránh khoảng cách không cần thiết */
+}
+
+#nav-menu li a {
+    color: #fff; /* Màu chữ trắng cho các liên kết trong menu */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của các liên kết */
+    font-weight: bold; /* Làm đậm chữ của các liên kết trong menu */
+}
+
+/* Phần mạng xã hội */
+#nav-social {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các biểu tượng mạng xã hội */
+    align-items: center; /* Căn giữa các biểu tượng theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa các biểu tượng mạng xã hội */
+    margin-left: 54px; /* Thêm khoảng cách giữa các biểu tượng mạng xã hội và cạnh phải của header */
+}
+
+#nav-social a {
+    color: #fff; /* Màu chữ trắng cho các liên kết mạng xã hội */
+    text-decoration: none; /* Loại bỏ gạch chân của các liên kết mạng xã hội */
+}
+
+.social-icon {
+    font-weight: bold; /* Làm đậm chữ của biểu tượng mạng xã hội (ví dụ như Facebook "f") */
+    font-size: 16px; /* Kích thước chữ cho biểu tượng mạng xã hội */
+}
+
+.social-lang.vi {
+    font-weight: bold; /* Làm đậm chữ "VI" */
+    padding-right: 8px; /* Thêm khoảng cách giữa chữ "VI" và đường phân cách (|) */
+    position: relative; /* Định vị tương đối để sử dụng pseudo-element (::after) */
+}
+
+.social-lang.vi::after {
+    content: ''; /* Thêm nội dung giả (dấu phân cách |) sau chữ "VI" */
+    position: absolute; /* Định vị tuyệt đối cho đường phân cách */
+    right: 0; /* Đặt đường phân cách ở phía bên phải của chữ "VI" */
+    top: 5px; /* Đặt vị trí của đường phân cách từ trên xuống */
+    bottom: 0; /* Đường phân cách sẽ chạy từ đầu tới đáy của phần tử */
+    width: 1px; /* Độ rộng của đường phân cách */
+    height: 16px; /* Đặt chiều cao cố định của đường phân cách */
+    background-color: #fff; /* Màu của đường phân cách là màu trắng */
+    margin-left: 5px; /* Tạo khoảng cách giữa đường phân cách và chữ "EN" */
+}
+
+/* end Header */
+
+/* Slider */
+#silder {
+    position: relative;
+    width: 100vw; /* Đảm bảo slider rộng 100% màn hình */
+    padding-top: 50%;
+}
+
+#slider img{
+    width: 100%;
+    object-fit: cover; /* Đảm bảo hình ảnh vừa khít mà không bị biến dạng */
+}
+
+.text-content{
+    position: absolute;
+    color: #fff;
+    top: 30%; /* Căn chỉnh chữ ở giữa theo chiều dọc */
+    left: 24%; /* Căn chỉnh chữ ở giữa theo chiều ngang */
+    font-weight: bold; /* Làm chữ đậm */
+}
+
+/* end Slider */
+
+/* Tabs */
+#tabs{
+    height: 100px;
+    width: 1460px;
+    margin: 88px auto 70px ;
+}
+
+.nav .nav-tabs .ustify-content-evenly{
+    height: 100px;
+    width: 1460px;
+}
+
+.nav-link{
+    width: 315px;
+    height: 100px;
+    display: flex;
+    justify-content: center;  /* Căn giữa theo chiều ngang */
+    align-items: center;      /* Căn giữa theo chiều dọc */
+}
+
+.nav-tabs .nav-link {
+    color:#1B332E;
+}
+
+.nav-tabs .nav-link.active {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--primary)
+}
+
+/* end Tabs */
+
+/* Content */
+#content{
+    position: relative;
+    width: 1450px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#content img{
+    border-radius: 10%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 7.94%, rgba(0, 0, 0, 0.7) 66.66%);
+}
+
+#content .larg-news-item img {
+    width: 720px;
+    height: 500px;
+    object-fit: cover; /* Đảm bảo rằng hình ảnh giữ đúng tỷ lệ khi thay đổi kích thước */
+}
+
+#content .small-news-grid img {
+    width: 345px;
+    height: 235px;
+    object-fit: cover; /* Đảm bảo rằng hình ảnh giữ đúng tỷ lệ khi thay đổi kích thước */
+}
+.larg-news-item,
+.small-news-grid .col {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.larg-news-item img,
+.small-news-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Căn chỉnh văn bản nằm trên hình ảnh */
+.overlay-text {
+    position: absolute;
+    bottom: 10px; /* Vị trí của text so với cạnh dưới hình ảnh */
+    left: 10px;
+    color: white;
+    z-index: 1; /* Đảm bảo văn bản nằm trên ảnh */
+    text-align: left;
+    width: 90%; /* Giới hạn chiều rộng của văn bản để tránh tràn */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.overlay-text h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.custom-row-spacing-1 {
+    padding-bottom: 15px; /* Adjust the gap between columns */
+}
+.custom-row-spacing-2{
+    padding-top: 15px;
+}
+
+
+
+/* end Content */
