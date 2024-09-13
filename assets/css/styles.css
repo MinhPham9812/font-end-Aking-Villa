@@ -3,8 +3,13 @@
 }
 
 html, body {
-    margin: 0;
+    width: 1920px;
+    margin: 0 auto;
     padding: 0;
+    background-image: url(/assets/images/background.svg);
+    background-repeat: no-repeat;
+    background-size: 1105px 972px; /* Đặt kích thước hình nền */
+    background-position: 880px 782px; /* Đặt vị trí hình nền */
 }
 
 /* Header */
@@ -154,6 +159,8 @@ html, body {
     color:#1B332E;
     font-weight: 400;
     line-height: 26px;
+    border: none; /* Tắt đường viền */
+    outline: none; /* Tắt đường viền khi được focus */
 }
 
 .nav-tabs .nav-link.active {
@@ -174,15 +181,10 @@ html, body {
 
 
 
-#content img{
-    border-radius: 15%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 7.94%, rgba(0, 0, 0, 0.7) 66.66%);
-}
-
 #content .larg-news-item img {
     width: 720px;
     height: 497px;
-    object-fit: cover; /* Đảm bảo rằng hình ảnh giữ đúng tỷ lệ khi thay đổi kích thước */
+    
 }
 
 #content .small-news-grid img {
@@ -190,6 +192,7 @@ html, body {
     height: 235px;
     object-fit: cover; /* Đảm bảo rằng hình ảnh giữ đúng tỷ lệ khi thay đổi kích thước */
 }
+
 .larg-news-item,
 .small-news-grid .col {
     position: relative;
@@ -197,7 +200,7 @@ html, body {
     height: 100%;
 }
 
-.larg-news-item img,
+#content .larg-news-item img,
 .small-news-grid img {
     width: 100%;
     height: auto;
@@ -215,7 +218,7 @@ html, body {
     text-align: left;
     width: 90%; /* Giới hạn chiều rộng của văn bản để tránh tràn */
     padding: 10px;
-    text-align: justify;
+    text-align: justify;  /* căn lề */
     line-height: 26px;
     padding-bottom: 5px;
 }
