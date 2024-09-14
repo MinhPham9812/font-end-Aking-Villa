@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -16,7 +17,10 @@
     
   </head>
   <body>
-        <div id="main">
+        
+
+        <!-- Slider main container -->
+        <div class="swiper">
             <!-- Header -->
             <div class="header d-flex justify-content-center">
                 <div id="nav-logo">
@@ -56,90 +60,143 @@
             </div>
             <!-- end Slider -->
 
-            <!-- Tabs -->
-            <div id="tabs" >
-                <ul class="nav nav-tabs align-items-stretch">
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Tin Aking Village</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tin dự án</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Thông báo</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- end Tabs -->
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+                <div class="swiper-slide">
+                    <!-- Tabs -->
+                <div id="tabs" >
+                    <ul class="nav nav-tabs align-items-stretch">
+                        <li class="nav-item"></li>
+                            <a class="nav-link" href="#"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Tin Aking Village</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tin dự án</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Thông báo</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end Tabs -->
 
-            <!-- Content -->
-            <div id="content">
-                <div class="row">
-                    <!-- column 1 -->
-                        <div class="col larg-news-item">
-                            <img src="assets/images/Rectangle1.svg" alt="">
-                            <div class="overlay-text">
-                                <i>11/5/2022</i>
-                                <h4>AKING VILLAGE KHẲNG ĐỊNH UY TÍN TỪ NHỮNG DỰ ÁN BÀN GIAO ĐÚNG TIẾN ĐỘ</h4>
-                                <p>20 năm thực hiện tôn chỉ “Nơi đặt niềm tin, Nơi xây tổ ấm”, hoạt động kinh doanh dựa trên nền tảng giá trị cốt lõi: pháp lý vững chắc, thông tin minh bạch, sản phẩm chất lượng và dịch vụ tận tâm, AKI VILLAGE đang khẳng định tầm vóc của một thương hiệu Việt...</p>
+                <!-- Content -->
+                <div id="content">
+                    <div class="row">
+                        <!-- column 1 -->
+                            <div class="col larg-news-item">
+                                <img src="assets/images/Rectangle1.svg" alt="">
+                                <div class="overlay-text">
+                                    <i>11/5/2022</i>
+                                    <h4>AKING VILLAGE KHẲNG ĐỊNH UY TÍN TỪ NHỮNG DỰ ÁN BÀN GIAO ĐÚNG TIẾN ĐỘ</h4>
+                                    <p>20 năm thực hiện tôn chỉ “Nơi đặt niềm tin, Nơi xây tổ ấm”, hoạt động kinh doanh dựa trên nền tảng giá trị cốt lõi: pháp lý vững chắc, thông tin minh bạch, sản phẩm chất lượng và dịch vụ tận tâm, AKI VILLAGE đang khẳng định tầm vóc của một thương hiệu Việt...</p>
+                                </div>
+                            </div>
+
+                        <!-- column 2 -->
+                            <div class="col small-news-grid">
+                                <!-- column 2, row 1 -->
+                                <div class="row custom-row-spacing-1">
+                                    <div class="col">
+                                        <img src="assets/images/Rectangle2.svg" alt="">
+                                        <div class="overlay-text">
+                                            <i>11/5/2022</i>
+                                            <h4>NGÀY 11.5.2022: AKING VILLAGE TỔ CHỨC SỰ KIỆN TRI ÂN KHÁCH HÀNG</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <img src="assets/images/Rectangle3.svg" alt="">
+                                        <div class="overlay-text">
+                                            <i>11/5/2022</i>
+                                            <h4>NGÀY 11.5.2022: AKING VILLAGE TỔ CHỨC SỰ KIỆN TRI ÂN KHÁCH HÀNG</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- column 2, row 2 -->
+                                <div class="row custom-row-spacing-2">
+                                    <div class="col">
+                                        <img src="assets/images/Rectangle4.svg" alt="">
+                                        <div class="overlay-text">
+                                            <i>11/5/2022</i>
+                                            <h4>NGÀY 11.5.2022: AKING VILLAGE TỔ CHỨC SỰ KIỆN TRI ÂN KHÁCH HÀNG</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <img src="assets/images/Rectangle5.svg" alt="">
+                                        <div class="overlay-text">
+                                            <i>11/5/2022</i>
+                                            <h4>NGÀY 11.5.2022: AKING VILLAGE TỔ CHỨC SỰ KIỆN TRI ÂN KHÁCH HÀNG</h4>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                    <!-- column 2 -->
-                        <div class="col small-news-grid">
-                            <!-- column 2, row 1 -->
-                            <div class="row custom-row-spacing-1">
-                                <div class="col">
-                                    <img src="assets/images/Rectangle2.svg" alt="">
-                                    <div class="overlay-text">
-                                        <i>11/5/2022</i>
-                                        <h4>NGÀY 11.5.2022: AKING VILLAGE TỔ CHỨC SỰ KIỆN TRI ÂN KHÁCH HÀNG</h4>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <img src="assets/images/Rectangle3.svg" alt="">
-                                    <div class="overlay-text">
-                                        <i>11/5/2022</i>
-                                        <h4>NGÀY 11.5.2022: AKING VILLAGE TỔ CHỨC SỰ KIỆN TRI ÂN KHÁCH HÀNG</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- column 2, row 2 -->
-                            <div class="row custom-row-spacing-2">
-                                <div class="col">
-                                    <img src="assets/images/Rectangle4.svg" alt="">
-                                    <div class="overlay-text">
-                                        <i>11/5/2022</i>
-                                        <h4>NGÀY 11.5.2022: AKING VILLAGE TỔ CHỨC SỰ KIỆN TRI ÂN KHÁCH HÀNG</h4>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <img src="assets/images/Rectangle5.svg" alt="">
-                                    <div class="overlay-text">
-                                        <i>11/5/2022</i>
-                                        <h4>NGÀY 11.5.2022: AKING VILLAGE TỔ CHỨC SỰ KIỆN TRI ÂN KHÁCH HÀNG</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                   
+                </div>
+                <!-- end Content -->
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
             </div>
-            <!-- end Content -->
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
 
             <!-- Footer -->
             <div id="footer">
-
+                <div id="nav-logo-footer">
+                    <img src="assets/images/logo_Aking.svg" alt="logo">
+                        <div class="logo-text-footer">
+                            <span class="logo-text-aking-footer">AKING</span>
+                            <span class="logo-text-village-footer">VILLAGE</span>
+                        </div>                 
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact">
+                        <h5>CONTACT</h5>
+                        <p>contact@Akingvillage</p>
+                        <p>contact@Akingvillage</p>
+                        <p>contact@Akingvillage</p>
+                    </div>
+                    <div class="contact">
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="contact">
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <div class="contact">
+                        <p>Lorem ipsum</p>
+                    </div>
+                </div>
             </div>
-            <!-- end Footer -->
+        <!-- end Footer -->     
         </div>
+
+        
+
+                   
+        
     
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper('.swiper', {
+                direction: 'horizontal', // Chiều ngang
+                loop: true, // Chạy lặp vô hạn
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        </script>
   </body>
 </html>

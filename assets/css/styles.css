@@ -14,7 +14,7 @@ html, body {
 
 /* Header */
 .header {
-    width: 1920px;
+    width: 100%;
     height: 127px; /* Đặt chiều cao cho header */
     background-color: var(--primary); /* Màu nền của header (được lấy từ biến CSS) */
     display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử bên trong header */
@@ -46,15 +46,9 @@ html, body {
 .logo-text-aking, .logo-text-village {
     font-size: 14px; /* Điều chỉnh kích thước chữ */
     color: #ffffff; /* Màu chữ trắng */
+    font-weight: normal;
 }
 
-.logo-text-aking {
-    font-weight: normal; 
-}
-
-.logo-text-village {
-    font-weight: normal; 
-}
 
 #nav-menu {
     display: flex; /* Sử dụng Flexbox để sắp xếp các mục trong menu */
@@ -113,7 +107,7 @@ html, body {
 /* Slider */
 #slider {
     position: relative;
-    width: 1920px;
+    width: 100%;
     height: 400px;
     margin: 0 auto;
 }
@@ -201,11 +195,11 @@ html, body {
 }
 
 #content .larg-news-item img,
-.small-news-grid img {
+#content .small-news-grid img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 /* Căn chỉnh văn bản nằm trên hình ảnh */
@@ -243,8 +237,141 @@ html, body {
     padding-top: 15px;
 }
 
-
-
-
-
 /* end Content */
+
+/* Footer */
+
+#footer {
+    display: flex;
+    justify-content: space-between; /* Space between logo and contact section */
+    align-items: center; /* Align items vertically */
+    background-color: var(--primary);
+    margin: 200px 0 auto; /* Center the content */
+    width: 1920px;
+    height: 251px;
+}
+
+
+
+#nav-logo-footer {
+    display: flex; /* Sử dụng Flexbox để logo và văn bản bên cạnh xếp hàng ngang */
+    align-items: center; /* Căn giữa logo và văn bản theo chiều dọc */
+    gap: 5px; /* Khoảng cách giữa logo và văn bản (AKING và VILLAGE) */
+    width: 140px;
+    height: 97px;
+    margin-left: 235px;
+}
+
+
+#nav-logo-footer img {
+    width: 54px;
+    height: 97px; /* Điều chỉnh chiều cao của logo */
+}
+
+/* Văn bản AKING và VILLAGE */
+.logo-text-footer {
+    display: flex;
+    flex-direction: column; /* Xếp chữ AKING và VILLAGE theo cột (AKING ở trên, VILLAGE ở dưới) */
+    align-items: flex-start; /* Căn chữ về bên trái */
+    width: 73px;
+    height: 37px;
+}
+
+.logo-text-aking-footer, .logo-text-village-footer {
+    font-size: 16px; /* Điều chỉnh kích thước chữ */
+    color: #ffffff; /* Màu chữ trắng */
+    font-weight: normal; 
+}
+
+.contact-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 770px;
+    height: 122px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 230px;
+    gap: 10px;
+    color: #ffffff;
+}
+
+.contact-wrapper h5{
+    font-weight: 700;
+}
+
+
+/* end Footer */
+
+.swiper {
+    
+    width: 100%;
+  }
+  
+/* Tùy chỉnh pagination */
+.swiper-pagination {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các chấm ngang hàng */
+    justify-content: center; /* Căn giữa các chấm theo chiều ngang */
+    align-items: center; /* Căn giữa các chấm theo chiều dọc */
+    gap: 81px; /* Khoảng cách giữa các chấm là 81px */
+    position: relative; /* Vị trí tương đối để có thể căn chỉnh chấm bên trong */
+    margin-top: 20px; /* Khoảng cách từ pagination đến nội dung bên trên */
+    --swiper-pagination-bottom: -80px; /* Điều chỉnh vị trí của pagination xuống dưới so với nội dung swiper */
+    z-index: 1; /* Đảm bảo pagination nằm trên các thành phần khác */
+}
+
+/* Thêm đường nối giữa các chấm pagination */
+.swiper-pagination-bullet::before {
+    content: ''; /* Tạo một phần tử giả trước mỗi chấm để tạo đường nối */
+    position: absolute; /* Đặt đường nối theo vị trí tuyệt đối so với chấm */
+    top: 50%; /* Đặt đường nối ở giữa chiều cao của chấm */
+    left: 100%; /* Đặt đường nối bắt đầu từ mép bên phải của chấm */
+    width: 96px; /* Độ dài của đường nối */
+    height: 0.5px; /* Độ dày của đường nối */
+    background-color: var(--primary); /* Màu sắc của đường nối */
+    transform: translateY(50%); /* Dịch chuyển đường nối một chút để đảm bảo nó nằm chính giữa */
+    z-index: 0; /* Đảm bảo đường nối nằm sau chấm */
+}
+
+/* Tùy chỉnh cho chấm không active */
+.swiper-pagination-bullet {
+    width: 17px; /* Đặt kích thước chấm không active là 17px */
+    height: 17px;
+    background-color: var(--primary); /* Màu của chấm không active */
+    border-radius: 50%; /* Tạo hình tròn cho chấm */
+    opacity: 1; /* Độ trong suốt của chấm là 100% */
+    position: relative; /* Đặt vị trí tương đối để căn chỉnh phần tử con */
+    z-index: 1; /* Đảm bảo chấm nằm trên đường nối */
+}
+
+/* Tùy chỉnh cho chấm active (đang được chọn) */
+.swiper-pagination-bullet-active {
+    width: 17px; /* Đặt kích thước của chấm active là 47px */
+    height: 17px;
+    background-color: var(--primary); /* Màu của chấm active */
+    border-radius: 50%; /* Tạo hình tròn cho chấm active */
+    opacity: 1; /* Độ trong suốt cho chấm active */
+    position: relative; /* Đặt vị trí tương đối để căn chỉnh phần tử con */
+    z-index: 2; /* Đảm bảo chấm active nằm trên các phần tử khác */
+}
+
+/* Tạo chấm nhỏ ở giữa chấm active */
+.swiper-pagination-bullet-active::after {
+    content: ''; /* Tạo một phần tử giả sau chấm active */
+    width: 47px; /* Kích thước của chấm nhỏ bên trong chấm active */
+    height: 47px;
+    background-color: var(--primary); /* Màu của chấm nhỏ bên trong */
+    border-radius: 50%; /* Tạo hình tròn cho chấm nhỏ */
+    position: absolute; /* Đặt chấm nhỏ bên trong chấm active */
+    top: 50%;
+    left: 50%;
+    opacity: 0.3;
+    transform: translate(-50%, -50%); /* Căn giữa chấm nhỏ */
+    z-index: 2; /* Đảm bảo chấm nhỏ nằm trên các phần tử khác */
+}
+
+/* Loại bỏ đường nối từ chấm cuối */
+.swiper-pagination-bullet:last-child::before {
+    display: none; /* Ẩn đường nối cho chấm cuối cùng */
+}
+
