@@ -274,6 +274,7 @@ html, body {
     opacity: 1; /* Độ trong suốt của chấm là 100% */
     position: relative; /* Đặt vị trí tương đối để căn chỉnh phần tử con */
     z-index: 1; /* Đảm bảo chấm nằm trên đường nối */
+    
 }
 
 /* Tùy chỉnh cho chấm active (đang được chọn) */
