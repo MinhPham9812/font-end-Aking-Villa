@@ -1,0 +1,185 @@
+#news-detail{
+    background-image: url('/assets/images/background2.svg') !important;
+    background-repeat: no-repeat;
+    background-size: 1924px 1207px;
+    background-position-y: 2523px ;
+    z-index: -1; /* Đảm bảo background không che nội dung */ 
+}
+
+
+.slider-news-detail .title-news .image-content img{
+    height: 803px;
+    margin-top: 80px;
+}
+
+/* Title-News */
+
+.slider-news-detail .title-news{
+    position: relative;
+    height: 943px;
+}
+
+/* khung tiêu đề */
+.slider-news-detail .title-news .title-content{
+    width: 1108px;
+    height: 261px;
+    background-color: var(--primary);
+    border-radius: 60px;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 682px;
+    left: 406px;
+}
+
+/* thẻ tiêu đề */
+.title-news .title-overplay{
+    width: 890px !important;
+    height: 160px !important;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+.title-content p {
+    font-family: 'Barlow';
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 21px;
+    text-align: justify;
+    padding: 0;
+}
+
+.d-flex .mb-3 p {
+    height: 22px !important; /* Ensure height is set */
+    padding-bottom: 0 !important;
+    align-self: center; /* Align items properly inside the flex container */
+}
+
+/* Tiêu đề */
+.title-content h2 {
+    width: 890px;
+    height: 116px;
+    font-family: 'Barlow';
+    font-size: 50px;
+    font-weight: 700;
+    padding: 0;
+}
+
+/* end Title-News */
+
+/* Text */
+
+.slider-news-detail #content .text-content-1 {
+    width: 1108px; /* Căn chỉnh chiều rộng phù hợp */
+    height: auto;
+    margin: 50px auto;
+    font-size: 18px; /* Kích thước chữ vừa phải */
+    font-weight: 400;
+    line-height: 26px; /* Khoảng cách giữa các dòng */
+    color: black; /* Màu chữ đậm để dễ đọc */
+    text-align: justify;
+
+}
+
+/* Khoảng cách giữa các đoạn văn */
+.slider-news-detail #content .text-content-1 p {
+    margin-bottom: 20px; /* Tạo khoảng cách giữa các đoạn văn */
+}
+
+/* hình ảnh giới thiệu */
+.slider-news-detail #content .describe-img{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.slider-news-detail #content .describe-img img{
+    border-radius: 10%;
+}
+
+/* end Text */
+
+/* Social Icons */
+.slider-news-detail .social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 28px; /* Khoảng cách giữa các nút */
+    margin-top: 50px;
+    margin-left: 406px;
+}
+
+.slider-news-detail .social-icon {
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    background-color: var(--primary); /* Màu nền của nút */
+    border-radius: 50%; /* Làm tròn nút */
+    color: white; /* Màu của icon */
+    text-align: center;
+    line-height: 50px;
+    font-size: 35px; /* Kích thước icon */
+    transition: background-color 0.3s ease;
+}
+
+.slider-news-detail .social-icon:hover {
+    background-color: #3e8e41; /* Màu nền khi hover */
+}
+/* end Social Icons */
+
+/* Break Line */
+.slider-news-detail .break-line{
+    width: 1460px;
+    margin: 60px auto 0;
+    border-bottom: 1px solid var(--primary);
+}
+/* end Break Line */
+
+.slider-news-detail .related-articles {
+    width: 939px; /* Căn chỉnh chiều rộng cho phần bài viết */
+    margin: 50px auto; /* Căn giữa phần bài viết và tạo khoảng cách trên dưới */
+}
+
+.slider-news-detail .related-articles h3 {
+    font-size: 20px; /* Kích thước chữ cho tiêu đề */
+    color: var(--primary); /* Màu tiêu đề */
+    font-weight: 700;
+    line-height: 26px;
+    text-transform: uppercase; /* Viết hoa tiêu đề */
+    text-align: left; /* Căn tiêu đề bên trái */
+}
+
+.slider-news-detail .related-articles ul {
+    list-style: none; /* Xóa dấu chấm đầu dòng của danh sách */
+    padding: 0;
+}
+
+.slider-news-detail .related-articles ul li {
+    position: relative; /* Định vị tương đối để chèn biểu tượng */
+    margin-bottom: 10px; /* Khoảng cách giữa các mục */
+    padding-left: 20px; /* Tạo khoảng cách cho biểu tượng ở phía trước */
+}
+
+.slider-news-detail .related-articles ul li::before {
+    content: '\2022'; /* Biểu tượng hình tròn (•) */
+    color: #1F7A56;
+    font-size: 50px; /* Kích thước của biểu tượng */
+    position: absolute;
+    left: 0;
+    top: -30px;
+}
+
+.slider-news-detail .related-articles ul li a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #1B332E; /* Màu của văn bản */
+    text-decoration: none; /* Xóa gạch chân mặc định của liên kết */
+    line-height: 26px; /* Khoảng cách dòng */
+}
+
+
+
+

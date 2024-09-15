@@ -1,0 +1,84 @@
+/* slider News */
+
+#slider-news-container .slider-news {
+    margin: 0 auto;
+    max-width: 100%; /* Đảm bảo rằng nó không vượt quá chiều rộng của trang */
+}
+
+/* Content */
+
+
+.slider-news #content{
+    position: relative;
+    width: 1460px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+
+
+.slider-news #content .larg-news-item img {
+    width: 720px;
+    height: 497px;
+    
+}
+
+.slider-news #content .small-news-grid img {
+    width: 345px;
+    height: 235px;
+    object-fit: cover; /* Đảm bảo rằng hình ảnh giữ đúng tỷ lệ khi thay đổi kích thước */
+}
+
+.slider-news .larg-news-item,
+.slider-news .small-news-grid .col {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-news #content .larg-news-item img,
+.slider-news #content .small-news-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Căn chỉnh văn bản nằm trên hình ảnh */
+.slider-news .overlay-text {
+    position: absolute;
+    bottom: 10px; /* Vị trí của text so với cạnh dưới hình ảnh */
+    left: 20px;
+    color: white;
+    z-index: 1; /* Đảm bảo văn bản nằm trên ảnh */
+    text-align: left;
+    width: 90%; /* Giới hạn chiều rộng của văn bản để tránh tràn */
+    padding: 10px;
+    text-align: justify;  /* căn lề */
+    line-height: 26px;
+    padding-bottom: 5px;
+}
+
+
+.slider-news .overlay-text h4 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.slider-news .overlay-text p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.slider-news .custom-row-spacing-1 {
+    padding-bottom: 15px; /* Adjust the gap between columns */
+}
+.slider-news .custom-row-spacing-2{
+    padding-top: 15px;
+}
+
+/* end Content */
+
+/* end slider News */
