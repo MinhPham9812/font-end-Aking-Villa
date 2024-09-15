@@ -34,12 +34,23 @@
 }
 
 /* thẻ tiêu đề */
-.title-news .title-overplay{
-    width: 890px !important;
-    height: 160px !important;
+.slider-news-detail .title-news .title-overplay{
+    width: 890px;
+    height: 160px ;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 0;
+}
+
+.slider-news-detail .metadata{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 16px;
+}
+
+.slider-news-detail .metadata p:last-child{
+    margin-left: auto;
 }
 
 .title-content p {
@@ -50,12 +61,6 @@
     line-height: 21px;
     text-align: justify;
     padding: 0;
-}
-
-.d-flex .mb-3 p {
-    height: 22px !important; /* Ensure height is set */
-    padding-bottom: 0 !important;
-    align-self: center; /* Align items properly inside the flex container */
 }
 
 /* Tiêu đề */
