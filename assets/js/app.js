@@ -10,7 +10,8 @@ function loadSliderContent(url, containerId) {
 
 // Load each slider
 loadSliderContent('news.html', 'slider-news-container');
-
+loadSliderContent('header.html', 'header-container');
+loadSliderContent('footer.html', 'footer-container');
 // Initialize Swiper
 setTimeout(() => {
     const swiper = new Swiper('.swiper', {

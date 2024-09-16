@@ -4,6 +4,7 @@
 
 html, body {
     width: 1920px;
+    height: auto;
     margin: 0 auto;
     padding: 0;
 }
@@ -307,3 +308,6 @@ html, body {
 .swiper-pagination-bullet:last-child::before {
     display: none; /* Ẩn đường nối cho chấm cuối cùng */
 }
+
+
+
