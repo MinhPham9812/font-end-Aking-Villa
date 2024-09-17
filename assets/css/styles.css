@@ -3,7 +3,7 @@
 }
 
 html, body {
-    width: 1920px;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     padding: 0;
@@ -17,27 +17,28 @@ html, body {
     z-index: -1; /* Đảm bảo background không che nội dung */ 
 }
 
-/* Header */
 .header {
-    width: 100%;
     height: 127px; /* Đặt chiều cao cho header */
     background-color: var(--primary); /* Màu nền của header (được lấy từ biến CSS) */
     display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử bên trong header */
     align-items: center; /* Căn chỉnh các phần tử theo chiều dọc (center) */
-    margin: 0 auto;
+    justify-content: center;
+    position: relative;
 }
 
 /* Logo */
-#nav-logo {
+.nav-logo {
+    position: absolute;
     display: flex; /* Sử dụng Flexbox để logo và văn bản bên cạnh xếp hàng ngang */
     align-items: center; /* Căn giữa logo và văn bản theo chiều dọc */
     gap: 5px; /* Khoảng cách giữa logo và văn bản (AKING và VILLAGE) */
-    margin-right: 54px;
+    top: 25%;
+    left: 12%;
     width: 103px;
     height: 71px;
 }
 
-#nav-logo img {
+.nav-logo img {
     height: 70px; /* Điều chỉnh chiều cao của logo */
 }
 
@@ -56,31 +57,36 @@ html, body {
 }
 
 
-#nav-menu {
+.nav-menu {
+    position: absolute;
     display: flex; /* Sử dụng Flexbox để sắp xếp các mục trong menu */
-    justify-content: center;
+    justify-content: space-between;
     gap: 50px; /* Khoảng cách giữa các mục menu */
     list-style: none; /* Xóa dấu bullet (chấm đầu dòng) của các mục danh sách */
-    margin: 0; /* Xóa margin thừa để tránh khoảng cách không cần thiết */
-    padding: 0; /* Xóa padding thừa để tránh khoảng cách không cần thiết */
-    width: 1156px;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1156px;
 }
 
-#nav-menu li a {
+.nav-menu li a {
     color: #fff; /* Màu chữ trắng cho các liên kết trong menu */
     text-decoration: none; /* Loại bỏ gạch chân mặc định của các liên kết */
     font-weight: bold; /* Làm đậm chữ của các liên kết trong menu */
 }
 
 /* Phần mạng xã hội */
-#nav-social {
+.nav-social {
+    position: absolute;
+    top: 40%;
+    right: 8%;
     display: flex; /* Sử dụng Flexbox để sắp xếp các biểu tượng mạng xã hội */
     align-items: center; /* Căn giữa các biểu tượng theo chiều dọc */
     gap: 10px; /* Khoảng cách giữa các biểu tượng mạng xã hội */
     margin-right: 54px; /* Thêm khoảng cách giữa các biểu tượng mạng xã hội và cạnh phải của header */
 }
 
-#nav-social a {
+.nav-social a {
     color: #fff; /* Màu chữ trắng cho các liên kết mạng xã hội */
     text-decoration: none; /* Loại bỏ gạch chân của các liên kết mạng xã hội */
 }
@@ -108,36 +114,117 @@ html, body {
     margin-left: 5px; /* Tạo khoảng cách giữa đường phân cách và chữ "EN" */
 }
 
+/* Nav-mobile */
+.nav-bars-btn {
+    position: absolute;
+    top: 25%;
+    right: 4%;
+    font-size: 40px;
+    color: #fff;
+    display: none;
+}
+
+.nav-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    display: none;
+}
+
+.nav-mobile{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform linear 0.2s;
+    z-index: 2;
+}
+
+.nav-mobile-menu{
+    margin-top: 70px;
+}
+
+.nav-mobile-menu:first-child{
+    border-top: 1px solid var(--primary);
+}
+
+.nav-mobile-menu li a{
+    display: block;
+    color: var(--primary); /* Màu chữ trắng cho các liên kết trong menu */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của các liên kết */
+    font-weight: bold; /* Làm đậm chữ của các liên kết trong menu */
+    padding: 15px 0;
+    font-size: 1rem;
+}
+
+.nav-mobile-close{
+    font-size: 1.5rem;
+    color: #666;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.break-line-mobile{
+    position: absolute;
+    width: 100%;
+    margin-top: 60px;
+    border: 1px solid var(--primary);
+}
+
+.nav-input{
+    display: none;
+}
+
+.nav-input:checked ~ .nav-overlay{
+    display: block;
+}
+
+.nav-input:checked ~ .nav-mobile{
+    transform: translateX(0%);
+}
 /* end Header */
+
+/* Responsive Header */
+@media (max-width: 1160px) {
+    .header .nav-bars-btn{
+        display: block;
+    }
+
+    .nav-menu{
+        display: none;
+    }
+}
 
 /* Slider */
 #slider {
     position: relative;
-    width: 100%;
-    height: 400px;
-    margin: 0 auto;
+    padding-top: 21%;
+    background-image: url(/assets/images/shutterstock.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
 }
 
-#slider img{
-    width: 100%;
-    height: 400px;
-    object-fit: cover; /* Đảm bảo hình ảnh vừa khít mà không bị biến dạng */
-    margin: 0 auto;
-}
 
 .text-content{
+    position: absolute;
     width: 124px;
     height: 42px;
-    position: absolute;
+    top: 35%;
+    left: 12%;
     color: #EEEBE2;
-    top: 140px; /* Căn chỉnh chữ ở giữa theo chiều dọc */
-    left: 230px; /* Căn chỉnh chữ ở giữa theo chiều ngang */
     font-size: 35px;
     font-weight: bold; /* Làm chữ đậm */
 }
-
-
-
 /* end Slider */
 
 /* Tabs */
@@ -308,6 +395,5 @@ html, body {
 .swiper-pagination-bullet:last-child::before {
     display: none; /* Ẩn đường nối cho chấm cuối cùng */
 }
-
 
 
