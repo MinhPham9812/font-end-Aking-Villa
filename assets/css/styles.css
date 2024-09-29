@@ -246,6 +246,14 @@ html, body {
     border-bottom: 3px solid var(--primary)
 }
 
+.tab-pane {
+    display: none; /* Ẩn tất cả nội dung tab mặc định */
+}
+
+.tab-pane.active {
+    display: block; /* Chỉ hiển thị tab có class 'active' */
+}
+
 /* end Tabs */
 
 /* Responsive*/
