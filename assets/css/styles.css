@@ -9,7 +9,7 @@ html, body {
     padding: 0;
 }
 
-.main{
+#main{
     background-image: url('/assets/images/background.svg') !important;
     background-repeat: no-repeat;
     background-size: 1105px 972px;
@@ -230,6 +230,7 @@ html, body {
     display: flex;
     justify-content: center;  /* Căn giữa theo chiều ngang */
     align-items: center;      /* Căn giữa theo chiều dọc */
+    transition: all 0.3s ease;
 }
 
 .nav-tabs .nav-link {
@@ -254,7 +255,45 @@ html, body {
     display: block; /* Chỉ hiển thị tab có class 'active' */
 }
 
+.tab-pane {
+    display: none; /* Ẩn tất cả các tab mặc định */
+}
+
+.tab-pane.active {
+    display: block; /* Hiển thị tab đang hoạt động */
+}
+
+#tab-content {
+    height: auto;
+}
 /* end Tabs */
+
+
+
+/* button scrollToTop */
+.scrollToTop {
+    position: fixed;
+    bottom: 20px; 
+    right: 40px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    border: none;
+    color: white;
+    width: 5vw;
+    height: 5vw;
+    text-align: center;
+    line-height: calc(5vw - 6px); /* Đảm bảo icon căn giữa */
+    font-size: 2vw; /* Kích thước icon */
+    opacity: 0.5; /* Độ mờ ban đầu */
+    transition: opacity 0.3s ease; /* Hiệu ứng chuyển mờ khi hover */
+    z-index: 999; /* Đảm bảo nút luôn ở trên cùng */
+}
+
+.scrollToTop:hover {
+    opacity: 1; /* Khi hover vào nút, nó sẽ sáng lên */
+    cursor: pointer; /* Thay đổi con trỏ thành biểu tượng pointer */
+}
+/* end button scrollToTop */
 
 /* Responsive*/
 @media (max-width: 1675px) {

@@ -2,51 +2,93 @@ $(document).ready(function() {
     // Load header
     $("#header-container").load("header.html");
   
-    // Load footer
-    $("#footer-container").load("footer.html");
-  
-    // Load slider content for news, sau đó khởi tạo Swiper
-    $("#slider-news-container").load("news.html", function() {
-        // Khi slider đã tải xong, khởi tạo Swiper
-        const swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+    // Load tabs và gắn sự kiện sau khi tải xong
+    $("#tab-container").load("tabs.html", function() {
+        console.log('Tabs loaded successfully');
+
+        // Khởi tạo Swiper sau khi slider-news-container được load
+        $("#slider-news-container").load("news.html", function() {
+            const swiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            // Xử lý chuyển sang trang news_detail.html sau khi nội dung `news.html` đã được load
+            $('#slider-news-container').on('click', '.larg-news-item img', function(event) {
+                event.preventDefault();
+                console.log("Hình ảnh lớn được click");
+                window.location.href = 'news_detail.html'; // Chuyển hướng sang trang news_detail.html
+            });
+
+            $('#slider-news-container').on('click', '.small-news-grid img', function(event) {
+                event.preventDefault();
+                console.log("Hình ảnh nhỏ được click");
+                window.location.href = 'news_detail.html'; // Chuyển hướng sang trang news_detail.html
+            });
+        });
+
+        // Gắn sự kiện click cho các tab
+        $('#tabs a').on('click', function(event) {
+            event.preventDefault(); // Ngăn hành vi mặc định (điều hướng trang)
+            
+            // Xóa class active khỏi tất cả các tab
+            $('#tabs a').removeClass('active');
+            // Thêm class active vào tab được click
+            $(this).addClass('active');
+            
+            // Ẩn tất cả các tab
+            $('.tab-pane').removeClass('active');
+      
+            // Kiểm tra và hiển thị nội dung cho từng tab
+            let tabId = $(this).attr('id');
+            console.log('Tab clicked: ' + tabId);
+      
+            if (tabId === 'news-link') {
+                $('#news').addClass('active'); // Hiển thị tab 1
+            } else if (tabId === 'newsProject-link') {
+                if (!$('#newsProject').html()) {
+                    $('#newsProject').load('newsProject.html');
+                }
+                $('#newsProject').addClass('active'); // Hiển thị tab 2
+            } else if (tabId === 'notificationPage-link') {
+                if (!$('#notificationPage').html()) {
+                    $('#notificationPage').load('notificationPage.html');
+                }
+                $('#notificationPage').addClass('active'); // Hiển thị tab 3
+            }
         });
     });
 
-     // Khi trang được tải, mặc định Tab 1 (news) được hiển thị
-     $('#news').load('news.html');
+    // Load footer
+    $("#footer-container").load("footer.html");
+     
 
-    // Khi người dùng nhấp vào Tab 1 (Tin Aking Village)
-    $('#news-link').on('click', function(event) {
-        event.preventDefault(); // Ngăn không cho link mặc định thực hiện điều hướng (vì href="#")
-        console.log('Tab 1 clicked');
-        $('.tab-pane').hide();  // Ẩn tất cả các tab
-        $('#tab-content').empty(); // Xóa nội dung hiện tại
-        $('#news').show(); // Hiển thị tab 1
-        $('#news').load('news.html'); // Tải nội dung từ file news.html
-    });
+    // Xử lý scrollToTop
+    // Kiểm tra nếu phần tử scrollToTop tồn tại
+    if ($("#scrollToTop").length) {
+        // Ẩn nút khi trang được tải
+        $("#scrollToTop").hide();
 
-    // Khi người dùng nhấp vào Tab 2 (Tin Dự Án)
-    $('#tinDuAn-link').on('click', function(event) {
-        event.preventDefault();
-        $('.tab-pane').hide();  // Ẩn tất cả các tab
-        $('#tab-content').empty(); // Xóa nội dung hiện tại
-        $('#tinDuAn').show(); // Hiển thị tab 2
-        $('#tinDuAn').load('tinDuAn.html'); // Tải nội dung từ file tinDuAn.html
-    });
+        // Khi người dùng cuộn xuống 300px, hiển thị nút
+        $(window).on('scroll',function() {
+            if ($(this).scrollTop() > 600) {
+                console.log("success");
+                $("#scrollToTop").fadeIn();
+            } else {
+                console.log("failed");
+                $("#scrollToTop").fadeOut();
+            }
+        });
 
-    // Khi người dùng nhấp vào Tab 3 (Thông Báo)
-    $('#thongBao-link').on('click', function(event) {
-        event.preventDefault();
-        $('.tab-pane').hide();  // Ẩn tất cả các tab
-        $('#tab-content').empty(); // Xóa nội dung hiện tại
-        $('#thongBao').show(); // Hiển thị tab 3
-        $('#thongBao').load('thongBao.html'); // Tải nội dung từ file thongBao.html
-    });
+        // Khi người dùng nhấp vào nút, cuộn về đầu trang
+        $("#scrollToTop").on('click',function() {
+            $("html, body").animate({scrollTop: 0}, 600);
+            return false;
+        });
+    }
 });
 
