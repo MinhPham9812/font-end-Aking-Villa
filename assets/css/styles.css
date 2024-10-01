@@ -248,14 +248,6 @@ html, body {
 }
 
 .tab-pane {
-    display: none; /* Ẩn tất cả nội dung tab mặc định */
-}
-
-.tab-pane.active {
-    display: block; /* Chỉ hiển thị tab có class 'active' */
-}
-
-.tab-pane {
     display: none; /* Ẩn tất cả các tab mặc định */
 }
 
