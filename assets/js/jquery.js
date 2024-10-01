@@ -20,8 +20,20 @@ $(document).ready(function() {
             // Xử lý chuyển sang trang news_detail.html sau khi nội dung `news.html` đã được load
             $('#slider-news-container').on('click', '.larg-news-item img', function(event) {
                 event.preventDefault();
-                console.log("Hình ảnh lớn được click");
-                window.location.href = 'news_detail.html'; // Chuyển hướng sang trang news_detail.html
+
+                 // Ẩn các phần tử khác và hiển thị news detail container
+                $("#tab-content").hide(); // Ẩn các nội dung tab-content
+                $("#news-detail-container").show(); // Hiển thị news detail
+
+                // Load nội dung từ news_detail.html vào news-detail-container
+                $("#news-detail-container").load("news_detail.html", function(response, status, xhr) {
+                    if (status === "error") {
+                        console.log("Error loading news detail: " + xhr.status + " " + xhr.statusText);
+                    } else {
+                        console.log("News detail loaded successfully.");
+                    }
+                });
+                //window.location.href = 'news_detail.html'; // Chuyển hướng sang trang news_detail.html
             });
 
             $('#slider-news-container').on('click', '.small-news-grid img', function(event) {
