@@ -73,13 +73,11 @@ $(document).ready(function() {
         // Ẩn nút khi trang được tải
         $("#scrollToTop").hide();
 
-        // Khi người dùng cuộn xuống 300px, hiển thị nút
+        // Khi người dùng cuộn xuống 600px, hiển thị nút
         $(window).on('scroll',function() {
             if ($(this).scrollTop() > 600) {
-                console.log("success");
                 $("#scrollToTop").fadeIn();
             } else {
-                console.log("failed");
                 $("#scrollToTop").fadeOut();
             }
         });
